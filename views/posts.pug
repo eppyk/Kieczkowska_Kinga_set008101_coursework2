@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  h1 ✍️  POSTS ✍️
+
+  table(align="center")
+    tr
+      th Title
+      th Post
+    tr
+    each post in posts
+      tr
+        td=post.title
+        td
+          p=post.text
+      tr
+
+  form(action='/uposts', method='POST')
+    p
+    label Delete a post titled:
+    input(type='text', name='post_title')
+    input(type='submit', value='go')
+
+  br
+  br
+
+  table(id="menu" align="center")
+    tr
+      th
+        a(class='button' href='/postform') add / update
+      th
+        a(class='button' href='/') back to home
+    tr

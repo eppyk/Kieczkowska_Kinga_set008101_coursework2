@@ -1,0 +1,39 @@
+extends layout
+
+
+block content
+  h1 add or update a post
+  p Fill in the below to add or update a post.
+
+  table(align="center")
+    tr
+      th
+        h3 Compose a new post
+      th
+        h3 Update an existing post
+    tr
+      td
+        form(action='/posts', method='POST' id="makepost")
+          p
+          label Title:
+          input(type='textarea', name='post_title')
+          input(type='submit', value='publish')
+        textarea(name='post_content' form="makepost" rows='10' cols='40')
+      td
+        form(action='/upposts', method='POST' id='updatepost')
+          p
+          label Title:
+          input(type='text', name='post_title')
+          input(type='submit', value='update')
+        textarea(name='post_content' form="updatepost" rows='10' cols='40')
+
+    tr
+
+
+  table(id="menu" align="center")
+    tr
+      th
+        a(class='button' href='/posts') see all posts
+      th
+        a(class='button' href='/') back to home
+    tr

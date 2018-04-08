@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 🏠 HOME 🏠
+
+  h3 Welcome!
+  p This blog has been created as a coursework submission for SET08101.
+  p It's an Express web app built using HTML (Pug), CSS, JS with Node.js and MongoDB.
+  table(id="menu" align="center")
+    tr
+      th
+        a(class='button' href='/postform') add a post
+      th
+        a(class='button' href='/posts') see all posts
+    tr
