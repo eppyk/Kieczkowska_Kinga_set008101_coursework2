@@ -54,7 +54,7 @@ exports.deleteOne = (req, res) => {
     if (obj.result.n == 1) {
       return res.render('postchanged', {result: "worked", title: req.body.post_title, action:"deleted."});
     } else {
-      return res.render('postchanged', {result: "didn't work", title: req.body.post_title, action:"lost in the univers :( Are you sure it exists? "});
+      return res.render('postchanged', {result: "didn't work", title: req.body.post_title, action:"lost in the universe :( Are you sure it exists? "});
     };
     db.close();
   });
